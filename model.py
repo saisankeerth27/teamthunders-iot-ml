@@ -15,7 +15,7 @@ def generate():
     X = X.reshape(-1,1)
     
     
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
     
     
     ai = KNeighborsClassifier(n_neighbors=3)
@@ -26,6 +26,7 @@ def generate():
     accuracy_score(y_test, y_ai)
 
 
-    pickle.dump(ai, open('ai.pkl'), 'wb')
+    pickle.dump(ai, open('ai.pkl', 'wb'))
+
 
     print('created ai.pkl file.... successfully')
